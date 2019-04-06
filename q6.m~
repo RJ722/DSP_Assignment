@@ -1,0 +1,22 @@
+clc
+clear all
+
+F = 10;
+len = 100;
+L = 2;
+
+t = 0:0.01:len;
+x = sin(2*pi*F*t);
+
+len
+N = length(x)
+display(length(t))
+
+new_length = len + (len-1)*(L-1);
+x_L = zeros([new_length 1]);
+x_L(1:L:end) = x(:);
+
+% s(1) = subplot(2, 1, 1);
+% s(2) = subplot(2, 1, 2);
+
+stem(s(2), x_L, t);

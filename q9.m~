@@ -1,0 +1,19 @@
+Fs = 100;
+f = 20;
+t = 0:1/Fs:1;
+
+s = sin(2*pi*f*t + pi/6);
+
+snrs = -20:5:20;
+co_c = zeros(size(snrs));
+
+for snr=snrs
+    r = awgn(s, snr);
+    co_c() = corrcoef(s, r);
+end
+subplot(1, 2, 1);
+plot(s);
+
+subplot(1, 2, 2);
+plot(r);
+

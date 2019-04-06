@@ -1,0 +1,15 @@
+Fs = 20;
+F = 7;
+M = 3;
+
+t = 0:1/Fs:1;
+x = sin(2*pi*F*t);
+
+% Add a zero between every two samples
+sz_x = size(x);
+x_new = zeros([2*lengh - 1 1]);
+x_new(1:2:end) = x(:);
+
+stem(x);
+
+for i=1:length
